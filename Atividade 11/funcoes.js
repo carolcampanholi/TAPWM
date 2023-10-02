@@ -1,6 +1,10 @@
-var num1 = parseFloat(prompt("Informe o primeiro número: "));
-var num2 = parseFloat(prompt("Informe o segundo número: "));
-var num3 = parseFloat(prompt("Informe o terceiro número: "));
-var num4 = parseFloat(prompt("Informe o último número: "));
-
-function funcao (num1, num2, num3, num4);
+function MaiorNumero(num1, num2, num3, num4) {
+    return Math.max(num1, num2, num3, num4);
+  }
+  
+  function NumerosCrescente(num1, num2, num3, num4) {
+    const numeros = [num1, num2, num3, num4];
+    numeros.sort((a, b) => a - b);
+    return numeros;
+  }
+  
