@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16 - Checkbox</title>
+</head>
+<body>
+    <h1>Transformar Texto</h1>
+    <form>
+        <label for="texto">Digite alguma coisa:</label>
+        <input type="text" id="texto" name="texto" value="">
+        <br>
+        <label>
+            <input type="checkbox" id="upperCase" name="transform" value="uppercase">
+            Transformar em maiúsculas
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="lowerCase" name="transform" value="lowercase">
+            Transformar em minúsculas
+        </label>
+    </form>
+    <div id="resultado"></div>
+    <script>
+        const inputTexto = document.getElementById("texto");
+        const checkBoxMaiusculas = document.getElementById("upperCase");
+        const checkBoxMinusculas = document.getElementById("lowerCase");
+        const resultado = document.getElementById("resultado");
+
+        inputTexto.addEventListener("input", transformarTexto);
+
+        checkBoxMaiusculas.addEventListener("change", transformarTexto);
+        checkBoxMinusculas.addEventListener("change", transformarTexto);
+
+        function transformarTexto() {
+            const texto = inputTexto.value;
+            let resultadoTexto = texto;
+
+            if (checkBoxMaiusculas.checked) {
+                resultadoTexto = resultadoTexto.toUpperCase();
+            }
+
+            if (checkBoxMinusculas.checked) {
+                resultadoTexto = resultadoTexto.toLowerCase();
+            }
+
+            resultado.textContent = resultadoTexto;
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
