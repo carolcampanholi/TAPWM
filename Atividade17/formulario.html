@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 17 - Formulário</title>
+    <script>
+        function validarFormulario() {
+            var nome = document.nomeform.elements['nome'].value;
+            var email = document.nomeform.elements['email'].value;
+            var comentario = document.nomeform.elements['comentario'].value;
+            var primeiraVez = document.nomeform.elements['primeira_vez'].value;
+
+            if (nome.length < 10) {
+                alert("Nome deve ter pelo menos 10 caracteres.");
+                return false;
+            }
+
+            if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+                alert("Email deve conter '@' e '.'.");
+                return false;
+            }
+
+            if (comentario.length < 20) {
+                alert("Comentário deve ter pelo menos 20 caracteres.");
+                return false;
+            }
+
+            if (primeiraVez === 'nao') {
+                alert("Que bom que você voltou a visitar esta página!");
+            } else if (primeiraVez === 'sim') {
+                alert("Volte sempre a esta página!");
+            }
+
+            return true;
+        }
+    </script>
+
+<style>
+    body {
+        background-color: #3498db; /* Fundo azul */
+        font-family: 'Arial', sans-serif; /* Define uma fonte aleatória */
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    input[type="radio"] {
+        margin-right: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #3498db; /* Cor de fundo azul */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+<body>
+    <form name="nomeform" onsubmit="return validarFormulario()">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required><br>
+    <form name="nomeform" onsubmit="return validarFormulario()">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+        <label for="comentario">Comentário:</label>
+        <textarea name="comentario" id="comentario" required></textarea><br>
+
+        <label>Primeira vez nesse site?</label>
+        <input type="radio" name="primeira_vez" value="sim" required> Sim
+        <input type="radio" name="primeira_vez" value="nao" required> Não<br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
