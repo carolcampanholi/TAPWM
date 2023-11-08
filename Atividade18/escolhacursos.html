@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 18 - Informaçoes Fatec</title>
+    <title>Selecione um Curso</title>
+    <script>
+        function abrirCurso() {
+            var selectCurso = document.getElementById('cursos');
+            var cursoSelecionado = selectCurso.value;
+
+            if (cursoSelecionado) {
+                var confirmacao = confirm("Deseja conhecer mais o curso de " + cursoSelecionado + "?");
+
+                if (confirmacao) {
+                    var largura = 600;
+                    var altura = 300;
+                    var urlCurso = obterURLdoCurso(cursoSelecionado);
+
+                    if (urlCurso) {
+                        window.open(urlCurso, 'Curso', 'width=' + largura + ', height=' + altura);
+                    } else {
+                        alert("URL do curso não encontrada.");
+                    }
+                }
+            }
+        }
+
+        function obterURLdoCurso(curso) {
+            var cursos = {
+                "Curso 1": "ads.html",
+                "Curso 2": "eletroauto.html",
+                "Curso 3": "fabmec.html",
+                "Curso 4": "gestao.html",
+                "Curso 5": "logistica.html",
+                "Curso 6": "manuavan.html",
+                "Curso 7": "poli.html",
+                "Curso 8": "procmeta.html",
+                "Curso 9": "procmeca.html",
+                "Curso 10": "sisbio.html"
+            };
+
+            return cursos[curso];
+        }
+    </script>
+</head>
+<body>
+    <h1>Selecione um Curso</h1>
+    <label for="cursos">Escolha um curso:</label>
+    <select id="cursos" onchange="abrirCurso()">
+        <option value="">Selecione um curso</option>
+        <option value="Curso 1">Análise e Desenvolvimento de Sistemas</option>
+        <option value="Curso 2">Eletronica Automativa</option>
+        <option value="Curso 3">Fabricacao Mecanica</option>
+        <option value="Curso 4">Gestao da Qualidade</option>
+        <option value="Curso 5">Logistica</option>
+        <option value="Curso 6">Manufatura Avançada</option>
+        <option value="Curso 7">Polímeros</option>
+        <option value="Curso 8">Processos Metalúrgicos</option>
+        <option value="Curso 9">Processos Mecanicos</option>
+        <option value="Curso 10">Sistemas Biomédicos</option>
+        <!-- Adicione mais cursos conforme necessário -->
+    </select>
+</body>
+</html>
