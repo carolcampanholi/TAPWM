@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CORRECAO</title>
+</head>
+<body>
+    <script>
+   //Questão 1:
+   var ObjLivro1 = {
+        Titulo: "Dom Casmurro",
+        Autor: "Machado de Assis"
+    }
+
+    alert(Obj1.Titulo+""+ObjLivro1.Autor)
+    alert(`${ObjLivro1.Titulo} ${ObjLivro1.Autor}`)
+    alert(JSON.stringify(ObjLivro1))
+
+      
+   
+    var ObjLivro2 = {};
+    ObjLivro2.Titulo = "Dom Casmurro";
+    ObjLivro2.Autor = "Machado de Assis";
+
+    var ObjLivro3 = new Object();
+    ObjLivro3.Titulo = "Dom Casmurro";
+    ObjLivro3.Autor = "Machado de Assis";
+
+    function Livro(_Titulo, _Autor)
+    {
+        this.Titulo = _Titulo;
+        this.Autor = _autor;
+    }
+
+    var objLivro4 = new Livro('Dom Casmurro', 'Machado de Assis');     
+
+    class Livro1 {
+        constructor(titulo,autor) {
+            this.titulo = titulo;
+            this.autor = autor;
+
+        }
+    }
+
+    const objLivro5 = new Livro1("Titulo do Livro", "Autor do Livro");
+
+
+
+    /*Questão 2: Qual é o resultado que aparece na tela?
+      1230 - 1231 - 1232 - 1233 - 1234 - 1235*/
+
+
+      /*Questão 3:
+      d) 32, 3, 24, 2, 15, 10, 1*/
+
+
+      /*Questão 4:
+      R: o alert irá exibir o número 1.*/
+
+      //Questão 5:
+      function Ordena(n1, n2, n3) {
+          var matriz = [n1, n2, n3];
+          matriz.sort(function(a,b) {b-a});
+          return matriz;
+      }
+
+      alert(Ordena(5,2,2));
+
+      function Ordena2(n1, n2, n3){
+          var matriz = [n1,n2,n3];
+          matriz.sort(function(a,b) {a-b});
+          matriz.reverse();
+          return matriz;
+      }
+
+      alert(Ordena2(5,2,2));
+
+      function Ordena3(n1, n2, n3) {
+          let maior = math.max(n1, n2, n3);
+          let menor = math.min(n1, n2, n3);
+          let meio;
+          if(n1 !== maior && n1 !== menor) {
+              meio = n1;
+          } else if (n2 !== maior && n2 !== menor) {
+              meio = n2;
+          } else {
+              meio = n3;
+          }
+          return `${maior} ${meio} ${menor}`;
+      }
+      alert(Ordena3(10,5,8));
+
+
+     /*Questão 6:
+     alert(objeto.descricao + objeto.codigo);*/
+
+
+     /*Questão 7:
+     console.log(j) --> undefined
+     console.log(y) --> NaN
+     console.log(z) --> Infinity
+     console.log(w) --> null*/
+
+
+     /*Questão 8:
+     e) nenhuma das anteriores*/
+
+     /*Questão 9:
+     R: 3340, 3341, 3342, 3343, 3344.*/
+     
+     
+
+
+
+    </script>
+</body>
+</html>
